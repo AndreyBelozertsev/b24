@@ -14,12 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    dump(base_path());
     return view('welcome');
 });
 
-Route::match(['head','post'],'/app/', function () {
-    return view('index');
+Route::match(['head'],'/app/', function () {
+    return '';
 });
-Route::match(['head','post'],'/install/', function () {
-    return view('install');
+Route::match(['head'],'/install/', function () {
+    return '';
 });
+
+
