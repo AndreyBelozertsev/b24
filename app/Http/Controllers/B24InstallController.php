@@ -32,12 +32,16 @@ class B24InstallController extends Controller
                     //todo: some code
                     return '';
                 } else {
-                    $portal = new B24Api($memberId ); 
-                    $portal->call('placement.bind', [
-                        'PLACEMENT' => 'CRM_DEAL_DETAIL_TAB',
-                        'HANDLER' => env('APP_URL') . '/custom',
-                        'TITLE' => 'DEMO',
-                    ]);
+                    $portal = new B24Api($memberId); 
+                    $api = $portal->getApi();
+
+                    $data = $api->taskStages()->get(0);
+                    // $portal->call('placement.bind', [
+                    //     'PLACEMENT' => 'CRM_DEAL_DETAIL_TAB',
+                    //     'HANDLER' => env('APP_URL') . '/custom',
+                    //     'TITLE' => 'DEMO',
+                    // ]);
+                    dump($data);
                     return view('b24api/install', []);
                 }
             }
