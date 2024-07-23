@@ -31,8 +31,7 @@ class B24Controller extends B24ControllerBase
         if(isset($placement_options['ID']) && !empty($placement_options['ID'])){
             $id = $placement_options['ID'];
         }
-
-        
+        dump($id);
         $portal = new B24Api($memberId); 
         $data = $portal->getApi()->crmContact()->get($id);
         
