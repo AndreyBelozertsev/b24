@@ -9,7 +9,6 @@
             BX24.installFinish();
         });
     </script>
-    @vite(['resources/css/app.css'])
 </head>
 <body>
 Установка успешно завершена
