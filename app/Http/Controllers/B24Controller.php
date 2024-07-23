@@ -26,8 +26,9 @@ class B24Controller extends B24ControllerBase
         $portal = new B24Api($memberId); 
         $data = $portal->getApi()->request('crm.contact.get', [
             'id' => '2085',
-        ]);
-        dump($data);
+        ])->getResponseData();
+        
+        dump($data->getResult()->getResultData());
         return view('b24api/custom', []);
     }
 
