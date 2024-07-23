@@ -25,7 +25,7 @@ class B24Controller extends B24ControllerBase
             $memberId = $request->get('member_id');
 
         if ($request->has('PLACEMENT_OPTIONS') && !empty($request->get('PLACEMENT_OPTIONS'))){
-            $placement_options = json_decode('{"ID":"2085"}', true);
+            $placement_options = json_decode($request->get('member_id') , true);
         }
 
         if(isset($placement_options['ID']) && !empty($placement_options['ID'])){
