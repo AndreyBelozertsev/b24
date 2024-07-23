@@ -5,6 +5,7 @@
     <script src="//api.bitrix24.com/api/v1/"></script>
     <title>Приложение</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    @vite('resources/css/app.css')
     <script>
         BX24.ready(async function () {
             await BX24.init(async function () {
@@ -16,9 +17,10 @@
     </script>
 </head>
 <body>
-    <div id="app">
+    <div class="bg-red-500">
         @dump(request())
         Приложение
     </div>
 </body>
+@vite(['resources/js/app.js'])
 </html>
