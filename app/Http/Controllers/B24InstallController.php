@@ -34,7 +34,7 @@ class B24InstallController extends Controller
                 } else {
                     $portal = new B24Api($memberId); 
 
-                    $data = $portal->call('placement.bind', [
+                    $data = $portal->getApi()->request('placement.bind', [
                         'PLACEMENT' => 'CRM_DEAL_DETAIL_TAB',
                         'HANDLER' => env('APP_URL') . '/custom',
                         'TITLE' => 'DEMO',
