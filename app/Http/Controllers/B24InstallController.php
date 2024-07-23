@@ -7,7 +7,7 @@ use X3Group\B24Api\B24Api;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
-class B24InstallController1 extends Controller
+class B24InstallController extends Controller
 {
     use ValidatesRequests;
 
