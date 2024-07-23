@@ -7,4 +7,6 @@ use Illuminate\Support\Facades\Route;
  * Для приложений с интерфейсом
  */
 
-Route::post('/app','\X3Group\B24Api\Http\Controllers\B24Controller@index');
+Route::post('/app','\App\Http\Controllers\B24Controller@index');
+
+Route::post('/custom','\App\Http\Controllers\B24Controller@custom');
