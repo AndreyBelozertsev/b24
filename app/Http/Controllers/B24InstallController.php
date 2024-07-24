@@ -40,7 +40,25 @@ class B24InstallController extends Controller
 
                     $portal->getApi()
                         ->placement()
-                        ->bind('CRM_CONTACT_DETAIL_TAB', env('APP_URL') . '/custom', 'DEMO');
+                        ->unbind('CRM_DEAL_DETAIL_TAB', env('APP_URL') . '/custom');
+
+                        
+
+                    $portal->getApi()
+                        ->placement()
+                        ->bind('CRM_CONTACT_DETAIL_TAB', env('APP_URL') . '/custom', [
+                            'ru' => [
+                                'TITLE' => 'DEMO'
+                            ]
+                        ]);
+
+                    $portal->getApi()
+                        ->placement()
+                        ->bind('CRM_DEAL_DETAIL_TAB', env('APP_URL') . '/custom', [
+                            'ru' => [
+                                'TITLE' => 'DEMO2'
+                            ]
+                        ]);
                     
                     return view('b24api/install', []);
                 }
