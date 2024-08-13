@@ -18,12 +18,12 @@ class B24Controller extends B24ControllerBase
     {
         $memberId = null;
         $id = null;
-        if ($request->has('auth') && !empty($request->get('auth')['member_id']))
+        if ($request->has('auth') && !empty($request->get('auth')['member_id'])){
             $memberId = $request->get('auth')['member_id'];
-
-        if ($request->has('member_id') && !empty($request->get('member_id')))
+        }
+        if ($request->has('member_id') && !empty($request->get('member_id'))){
             $memberId = $request->get('member_id');
-
+        }
         if ($request->has('PLACEMENT_OPTIONS') && !empty($request->get('PLACEMENT_OPTIONS'))){
             $placement_options = json_decode($request->get('PLACEMENT_OPTIONS') , true);
         }
@@ -31,7 +31,7 @@ class B24Controller extends B24ControllerBase
         if(isset($placement_options['ID']) && !empty($placement_options['ID'])){
             $id = $placement_options['ID'];
         }
-        
+
         $portal = new B24Api($memberId); 
         $data = $portal->getApi()->crmContact()->get($id);
         

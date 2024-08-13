@@ -14,6 +14,18 @@
                 window.axios.defaults.headers.common['X-b24api-member-id'] = BX24.getAuth().member_id;
             });
         });
+        BX24.callMethod('user.get', {sort:'ID',order:'ASC'}, function(result){
+            if(result.error())
+            {
+                alert('Ошибка запроса: ' + result.error());
+            }
+            else
+            {
+                console.log(result.data());
+                if(result.more())
+                    result.next();
+            }
+        });
     </script>
 </head>
 <body>
