@@ -5,7 +5,7 @@
     <script src="//api.bitrix24.com/api/v1/"></script>
     <title>Приложение</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    @vite(['resources/css/app.css'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script>
         BX24.ready(async function () {
             await BX24.init(async function () {
@@ -26,14 +26,21 @@
                     result.next();
             }
         });
+        Alpine.data('dropdown', () => ({
+            open: false,
+        
+            toggle() {
+                this.open = ! this.open
+            }
+        }))
     </script>
 </head>
 <body>
     <div class="bg-red-500">
         @dump(request())
         Приложение
-        <button x-data @click="alert('I\'ve been clicked!')">Click Me</button>
+        <button x-data @click="console.log('I\'ve been clicked!')">Click Me</button>
     </div>
 </body>
-@vite(['resources/js/app.js'])
+
 </html>
