@@ -39,7 +39,17 @@
     <div class="bg-red-500">
         @dump(request())
         Приложение
-        <button x-data @click="console.log('I\'ve been clicked!')">Click Me</button>
+        <div x-data="dropdown">
+            <button @click="toggle">Expand</button>
+        
+            <span x-show="open">Content...</span>
+        </div>
+        
+        <div x-data="dropdown">
+            <button @click="toggle">Expand</button>
+        
+            <span x-show="open">Some Other Content...</span>
+        </div>
     </div>
 </body>
 
