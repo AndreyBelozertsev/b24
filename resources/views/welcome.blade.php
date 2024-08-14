@@ -29,6 +29,15 @@
                 </div>
             @endif
 
+
+            <div x-data="{ open: false }">
+                <div x-data="{ label: 'Content:' }">
+                    <span x-text="label"></span>
+                    <span x-show="open"></span>
+                </div>
+            </div>
+            <button x-data @click="alert('I\'ve been clicked!')">Click Me</button>
+
             <div class="max-w-7xl mx-auto p-6 lg:p-8">
                 <div class="flex justify-center">
                     <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
@@ -127,5 +136,6 @@
                 </div>
             </div>
         </div>
+        @vite('resources/js/app.js')
     </body>
 </html>

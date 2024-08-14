@@ -32,6 +32,7 @@
     <div class="bg-red-500">
         @dump(request())
         Приложение
+        <button x-data @click="alert('I\'ve been clicked!')">Click Me</button>
     </div>
 </body>
 @vite(['resources/js/app.js'])
